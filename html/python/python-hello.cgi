@@ -16,9 +16,12 @@ print """
 
 <head><title>Python CGI Script</title></head>
 
-<body bgcolor='{randColor}'>
+<body bgcolor='%s'>""" % randColor
 
-  <h1> Hello World from CGI Python @ {timeStr} </h1>
+print """
+
+  <h1> Hello World from CGI Python @ %s </h1>""" % timeStr
+print """
 </body>
 
 </html>  
