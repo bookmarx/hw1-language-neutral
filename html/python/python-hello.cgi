@@ -1,5 +1,4 @@
-import cgi
-import cgitb; cgitb.enable()  
+import cgi 
 import time
 import random
 print "Content-type: text/html"
