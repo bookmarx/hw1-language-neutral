@@ -12,6 +12,7 @@ colors = ['aqua', 'black', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon',
 randColor = random.choice(colors)
 
 print """
+<!DOCTYPE html>
 <html>
 
 <head><title>Python CGI Script</title></head>
