@@ -23,7 +23,7 @@ for param in envVars:
 
 print """
 	</table>
-	<h3>Browser Env Table:</h3>
+	<h3>Server Env Table:</h3>
 	<table border="1" style="width:100%">
 		<tr>
 			<th>Variable Key:</th>
