@@ -20,8 +20,8 @@ print """
 <body>
 	<h1 align="center">Python Process Data</h1><hr />
 """
-for i in range(0,magicnum)
-	print "<h1>Hello %s with a password of %s!</h1>" (username, password)
+for i in range(0,magicnum):
+	print "<h1>Hello %s with a password of %s!</h1>" % (username, password)
 
 print"""
 </body>
