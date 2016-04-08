@@ -10,6 +10,7 @@ username = form.getvalue('username')
 password  = form.getvalue('password')
 magicnum = form.getvalue('magicnum')
 
+
 print "Content-type:text/html\r\n\r\n"
 print """
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ print """
 <body>
 	<h1 align="center">Python Process Data</h1><hr />
 """
-for i in range(0,magicnum):
+for i in range(0,int(magicnum)):
 	print "<h1>Hello %s with a password of %s!</h1>" % (username, password)
 
 print"""
