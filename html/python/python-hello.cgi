@@ -1,8 +1,10 @@
+#!/usr/bin/python2.7
+
 import cgi 
 import time
 import random
-print "Content-type: text/html"
-print
+print "Content-type: text/html\n\n"
+
 
 timeStr = time.strftime("%c") # obtains current time
 
