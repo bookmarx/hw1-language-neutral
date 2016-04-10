@@ -20,7 +20,7 @@ print """
 <title>Python CGI Script</title>
 </head>
 
-<body style='background-color:'%s''>""" % randColor
+<body style="background-color:%s">""" % randColor
 
 print """
 
