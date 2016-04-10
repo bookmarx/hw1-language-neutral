@@ -1,6 +1,6 @@
 #!/usr/bin/python2.7
 
-import cgi 
+import cgi
 import time
 import random
 print "Content-type: text/html\n\n"
@@ -25,5 +25,5 @@ print """
 print """
 </body>
 
-</html>  
+</html>
 """
