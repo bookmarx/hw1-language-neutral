@@ -13,11 +13,14 @@ randColor = random.choice(colors)
 
 print """
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 
-<head><title>Python CGI Script</title></head>
+<head>
+<meta charset="UTF-8">
+<title>Python CGI Script</title>
+</head>
 
-<body bgcolor='%s'>""" % randColor
+<body style='background-color:'%s''>""" % randColor
 
 print """
 

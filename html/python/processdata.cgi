@@ -14,8 +14,9 @@ magicnum = form.getvalue('magicnum')
 print "Content-type:text/html\r\n\r\n"
 print """
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
+	<meta charset="UTF-8">
 	<title>Python CGI Form</title>
 </head>
 <body>
