@@ -17,9 +17,9 @@ puts "<!DOCTYPE html>
 puts ENV['REQUEST_URI']
 
 ENV.each do |key,value|
-  #if !key.include? "HTTP"
+  if key.include? "HTTP"
     puts "<tr><td><b>%20s</b></td><td>%s</td></tr>"  %[key, value]
-  #end
+  end
 end
 
 puts "
