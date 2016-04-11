@@ -15,10 +15,12 @@ puts "<!DOCTYPE html>
 	  </tr>
 "
 puts ENV['REQUEST_URI']
-
-ENV.each do |key,value|
-  if key.include? "HTTP"
-    puts "<tr><td><b>%20s</b></td><td>%s</td></tr>"  %[key, value]
+#pattern = "(^HTTP)|(^REQUEST)|(^QUERY)"
+pattern = Regexp.union(['HTTP', 'REQUEST', 'QUERY'])
+keys = ENV.each_key.sort
+for params in keys
+  if pattern.match(params)
+    puts "<tr><td><b>%20s</b></td><td>%s</td></tr>"  %[params, ENV[params]]
   end
 end
 
@@ -31,9 +33,9 @@ puts "
 			<th>Variable Value: </th>
 		</tr>
 "
-ENV.each do |key,value|
-  if !key.include? "HTTP"
-    puts "<tr><td><b>%20s</b></td><td>%s</td></tr>"  %[key, value]
+for params in keys
+  if !pattern.match(params)
+    puts "<tr><td><b>%20s</b></td><td>%s</td></tr>"  %[params, ENV[params]]
   end
 end
 
