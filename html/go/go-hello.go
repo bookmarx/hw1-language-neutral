@@ -1,5 +1,5 @@
 package main
-	
+
 import "time"
 import "fmt"
 import "math/rand"
@@ -19,9 +19,13 @@ func main() {
 
 	t0 := time.Now()
 
-    fmt.Printf("<html>"+ 
-			  "<head><title>GO CGI Script</title></head>" +
-			  "<body bgcolor='"+colors[r1]+"'>")
-
-	fmt.Println(t0.Format("2006-01-02 15:04:05"))
+    fmt.Printf(`<!doctype html>
+				<html lang="en">
+				<head>
+				    <title>Hello CGI World</title>
+				</head>
+				<body style="background-color: %s">
+				    <h1>Hello World from Go @  %s </h1>
+				</body>
+				</html>`, colors[r1], t0.Format("2006-01-02 15:04:05"))
 }
