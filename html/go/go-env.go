@@ -3,9 +3,10 @@ package main
 import "fmt"
 // import "net/http/cgi"
 import "os"
-import "strings"
 import "bytes"
 import "regexp"
+import  "sort"
+import "strings"
 
 func main() {
     var browserBuffer bytes.Buffer
@@ -13,10 +14,16 @@ func main() {
 
     fmt.Printf("Content-Type: text/html\n\n")
     // fmt.Printf("%s",os.Environ())
+    var keys []string
     for _, value := range os.Environ() {
         pair := strings.Split(value, "=")
-        isMatch, _ := regexp.MatchString("(^HTTP)|(^REQUEST)|(^QUERY)", pair[0])
-        envVar := fmt.Sprintf(`<tr><td>%s</td><td>%s</td></tr>`,pair[0], pair[1])
+        keys = append(keys, pair[0])
+    }
+    sort.Strings(keys)
+
+    for _, key := range keys {
+        isMatch, _ := regexp.MatchString("(^HTTP)|(^REQUEST)|(^QUERY)", key)
+        envVar := fmt.Sprintf(`<tr><td>%s</td><td>%s</td></tr>`,key, os.Getenv(key))
         if(isMatch) {
             browserBuffer.WriteString(envVar);
         } else {
@@ -44,5 +51,7 @@ func main() {
                     <h3>Server Env Table:</h3>
                     <table>%s</table>
                 </body>
-                </html>`, browserBuffer.String(), serverBuffer.String())
+                </html>`,
+                browserBuffer.String(),
+                serverBuffer.String())
 }
