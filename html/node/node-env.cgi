@@ -10,8 +10,11 @@ var body =`<!doctype html>
 <head>
 <title>Node CGI Env Vars</title>
 <style>
+    table {
+        width: 100%;
+    }
     table, th, td {
-            border: 1px solid black;
+        border: 1px solid black;
     }
 </style>
 </head>
@@ -33,8 +36,8 @@ console.log(header + body); // Server Response
 */
 function createEnvironmentVariable(){
     var reBrowserVar = new RegExp('(^HTTP)|(^REQUEST)|(^QUERY)','i');
-    var browserVars = {};
-    var serverVars = {};
+    var browserVars = [];
+    var serverVars = [];
 
     for( let e in process.env){
         if(reBrowserVar.test(e)){
@@ -49,9 +52,12 @@ function createEnvironmentVariable(){
     */
     function createTable(envData){
         let data = '';
-        for( let e in envData){
-            data += '<tr><td>'+e+'</td><td>'+process.env[e]+'</td></tr>';
-        }
+        // Sort output of table
+        Object.keys(envData)
+        .sort()
+        .forEach(function(key, i) {
+            data += '<tr><td>'+key+'</td><td>'+process.env[key]+'</td></tr>';
+        });
         return '<table>'+data+'</table>';
     }
 
