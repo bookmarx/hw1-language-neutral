@@ -34,6 +34,7 @@ func main() {
     fmt.Printf(`<!doctype html>
                 <html lang="en">
                 <head>
+                <meta charset="UTF-8">
                 <title>Node CGI Env Vars</title>
                 <style>
                     table {

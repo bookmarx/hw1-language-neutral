@@ -5,7 +5,7 @@ puts "Content-type: text/html\n\n"
 puts "<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset='UTF-8'>
 <title>Ruby CGI ENV Script</title>
 <style>
     table, th, td {

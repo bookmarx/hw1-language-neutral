@@ -37,6 +37,7 @@ func printBody(username string, password string, n int){
 	fmt.Printf(`<!doctype html>
 	<html lang="en">
 	<head>
+    <meta charset="UTF-8">
 	<title>Node CGI Process Data</title>
 	<style>
 	</style>
