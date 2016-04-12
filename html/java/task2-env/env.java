@@ -1,5 +1,3 @@
-//#!/usr/bin/java hello
-
 import java.util.*;
 import java.io.*;
 
