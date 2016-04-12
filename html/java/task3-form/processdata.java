@@ -31,10 +31,7 @@ class JavaForm
         "<body>" +
         "<h1>Java Process Data</h1><hr />");
 
-
         Map<String, String> env = System.getenv();
-
-
 
         if(env.get("REQUEST_METHOD").equals("GET")){
             Map<String, String> map = getQueryMap(env.get("QUERY_STRING"));
@@ -63,47 +60,7 @@ class JavaForm
             // for(int i = 0; i < Integer.parseInt(m3); i++){
             //     System.out.printf("<h1>Hello %s with a password of %s!</h1>",m1, m2);
             // }
-
         }
-
-
-
-        String username;
-        String password;
-        int magicnum;
-
-
         System.out.println ("</body>" + "</html>");
     }
 }
-
-
-/*
-// Create instance of FieldStorage
-form = cgi.FieldStorage()
-
-// Get data from fields
-username = form.getvalue('username')
-password  = form.getvalue('password')
-magicnum = form.getvalue('magicnum')
-
-
-print "Content-type:text/html\r\n\r\n"
-print """
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-<meta charset="UTF-8">
-<title>Python CGI Form</title>
-</head>
-<body>
-<h1>Python Process Data</h1><hr />
-"""
-for i in range(0,int(magicnum)):
-print "<h1>Hello %s with a password of %s!</h1>" % (username, password)
-
-print"""
-</body>
-</html>
-"""
-*/

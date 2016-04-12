@@ -6,7 +6,7 @@ class JavaEnv
   public static void main( String args[] )
   {
     System.out.println("Content-type: text/html\r\n\r\n");
-  
+
     System.out.println("<!DOCTYPE html>" +
       "<html>" +
       "<head><title>Java CGI ENV Script</title></head>" +
@@ -21,7 +21,7 @@ class JavaEnv
 
     Map<String, String> env = System.getenv();
       for (String envName : env.keySet()) {
-        if(envName.contains("HTTP")) {
+        if(envName.contains("HTTP")||envName.contains("REQUEST")||envName.contains("QUERY")) {
           System.out.format("<tr><td><b>%s</b></td><td>%s</td></tr>", envName, env.get(envName));
         }
       }
@@ -36,7 +36,7 @@ class JavaEnv
 
     Map<String, String> env2 = System.getenv();
       for (String envName2 : env2.keySet()) {
-        if(!envName2.contains("HTTP")) {
+        if(!envName2.contains("HTTP") && !envName2.contains("REQUEST") && !envName2.contains("QUERY"))  {
           System.out.format("<tr><td><b>%s</b></td><td>%s</td></tr>", envName2, env2.get(envName2));
         }
       }
