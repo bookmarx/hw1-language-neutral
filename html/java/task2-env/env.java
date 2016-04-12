@@ -1,6 +1,5 @@
 import java.util.*;
 import java.io.*;
-
 class JavaEnv
 {
   public static void main( String args[] )

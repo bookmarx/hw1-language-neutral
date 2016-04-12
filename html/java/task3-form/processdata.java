@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.*;
-
+import java.net.URLDecoder;
 
 class JavaForm
 {
@@ -18,7 +18,7 @@ class JavaForm
         }
         return map;
     }
-    public static void main( String args[] )
+    public static void main( String args[] ) throws UnsupportedEncodingException
     {
         System.out.println("Content-type: text/html\r\n\r\n");
 
@@ -39,7 +39,7 @@ class JavaForm
             String password = map.get("password");
             String magicnum = map.get("magicnum");
             for(int i = 0; i < Integer.parseInt(magicnum); i++){
-                System.out.printf("<h1>Hello %s with a password of %s!</h1>",username, password);
+                System.out.printf("<h1>Hello %s with a password of %s!</h1>",URLDecoder.decode(username, "UTF-8"), password);
             }
         } else if(env.get("REQUEST_METHOD").equals("POST")){
             // Scanner sc = new Scanner(System.in);
@@ -48,6 +48,8 @@ class JavaForm
             // while(sc.hasNext()){
             //     postData += sc.nextLine();
             // }
+            //
+            // System.out.printf("<h1>Hello %s with a password of asd!</h1>",URLDecoder.decode(postData, "UTF-8"));
             // Pattern p1 = Pattern.compile("\"username\"(.*)------",'i');
             // String m1 = p1.matcher(postData).group(1);
             //
