@@ -14,10 +14,16 @@ func main() {
     var req *http.Request
     req, _ = cgi.Request()
 
-    if(req.Method == "GET" || req.Method == "POST"){
+    if(req.Method == "GET"){
         var queryString = req.URL.Query();
         var magnum, _ = strconv.Atoi(queryString.Get("magicnum"))
         printBody(queryString.Get("username"), queryString.Get("password"), magnum)
+    } else if (req.Method == "POST"){
+        username := req.FormValue("username");
+        password := req.FormValue("password");
+        magnum := req.FormValue("magicnum");
+        magnumint, _ :=strconv.Atoi(magnum)
+        printBody(username, password, magnumint)
     }
 }
 
