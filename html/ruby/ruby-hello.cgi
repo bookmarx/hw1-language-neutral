@@ -2,7 +2,7 @@
 
 time = Time.new
 colors = ["aqua", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"]
-randColor = colors.choice
+randColor = colors.sample
 
 puts "Content-type: text/html\n\n"
 puts "<html>\n<head>\n<title>Hello CGI World</title>\n</head>\n"

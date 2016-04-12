@@ -4,11 +4,19 @@ require 'cgi'
 puts "Content-type: text/html\n\n"
 puts "<!DOCTYPE html>
 <html>
-<head><title>Ruby CGI ENV Script</title></head>
+<head>
+<meta charset="UTF-8">
+<title>Ruby CGI ENV Script</title>
+<style>
+    table, th, td {
+            border: 1px solid black;
+    }
+</style>
+</head>
 <body>
-  <h1 align='center'>Environment Variables</h1><hr/>
+  <h1>Environment Variables</h1><hr/>
   <h3>Browser Env Table:</h3>
-  <table border='1' style='width:100%'>
+  <table>
 	  <tr>
 	    <th>Variable Key:</th>
 	    <th>Variable Value: </th>
@@ -27,7 +35,7 @@ end
 puts "
 	</table>
 	<h3>Browser Env Table:</h3>
-	<table border='1' style='width:100%'>
+	<table>
 		<tr>
 			<th>Variable Key:</th>
 			<th>Variable Value: </th>
