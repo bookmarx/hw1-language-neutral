@@ -8,7 +8,7 @@ console.log(header);
 
 if( process.env.REQUEST_METHOD==='GET' ) {
 	var data = querystring.parse(process.env['QUERY_STRING']);
-	printBody(data.username, data.password, d.magicnum);
+	printBody(data.username, data.password, data.magicnum);
 
 } else if (process.env.REQUEST_METHOD==='POST') {
 	var data = '';

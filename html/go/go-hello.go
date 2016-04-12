@@ -22,6 +22,7 @@ func main() {
     fmt.Printf(`<!doctype html>
 				<html lang="en">
 				<head>
+					<meta charset="UTF-8">
 				    <title>Hello CGI World</title>
 				</head>
 				<body style="background-color: %s">
